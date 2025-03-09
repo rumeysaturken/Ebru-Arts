@@ -1,0 +1,286 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menü Stili */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 60px;
+}
+.navbar ul li a.active {
+    color: #fff; /* Aktif sayfa yazı rengi */
+    background-color: #040506; /* Aktif sayfa arka plan rengi */
+    border-radius: 5px; /* Köşeleri yuvarlat */
+    padding: 5px 10px; /* İç boşluk ekle */
+}
+
+.logo img {
+    max-width: 80px;
+    height: auto;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+/* Slider */
+/* Slider */
+.slider {
+    position: relative;
+    width: 100%; /* Tam genişlik */
+    height: 100vh; /* Ekran yüksekliğine göre ayarlanır */
+    overflow: hidden; /* Taşan kısımlar gizlenir */
+    margin: 0 auto; /* Ortalanır */
+    background-color: #f3f4f6; /* Arka plan (isteğe bağlı) */
+    top: 60px;
+}
+
+.slider-inner {
+    display: flex;
+    width: calc(100% * 1); /* Resim sayısı kadar genişlik (3 resim için) */
+    animation: slide-left 30s linear infinite; /* 12 saniyelik sürekli animasyon */
+}
+
+.slider-inner img {
+    width: 100%; /* Resimler slider alanına tam sığar */
+    height: 100%; /* Resimler slider alanının yüksekliğini doldurur */
+    object-fit: cover; /* Görselleri kesmeden orantılı bir şekilde sığdırır */
+}
+
+/* Animasyon */
+@keyframes slide-left {
+    0% {
+        transform: translateX(0); /* İlk görsel */
+    }
+    33.33% {
+        transform: translateX(-100%); /* İkinci görsel */
+    }
+    66.66% {
+        transform: translateX(-200%); /* Üçüncü görsel */
+    }
+    100% {
+        transform: translateX(0); /* Döngü başa döner */
+    }
+}
+
+    
+/* Galeri Stili */
+.gallery {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.gallery h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+/* Sabit Boyutlu Resimler */
+.gallery-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+
+.gallery-row img.fixed-size {
+    width: 200px; /* Sabit genişlik */
+    height: 150px; /* Sabit yükseklik */
+    object-fit: cover; /* Görsellerin aynı oranda kesilmesi */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Büyük Resimlerin Izgarası */
+.gallery-large-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* İkili sütun düzeni */
+    gap: 30px; /* Resimler arasındaki boşluk */
+    padding: 0 20px;
+    justify-items: center;
+}
+
+.gallery-large-row img {
+    width: 100%; /* Genişliği sütunlara göre ayarlar */
+    max-width: 400px; /* Maksimum genişlik */
+    height: 400px; /* Yükseklik artırıldı */
+    object-fit: cover; /* Görselleri orantılı şekilde keser ve boyutlandırır */
+    border-radius: 15px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-large-row img:hover {
+    transform: scale(1.08); /* Hover ile büyüme efekti */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+/* İletişim Bölümü */
+.contact-section {
+    padding: 2rem;
+    background-color: #f3f4f6;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.contact-info {
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: block;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item:hover {
+    color: #007bff;
+}
+
+/* Sosyal Medya İkonları */
+.social-media {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.social-media h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.social-icon.instagram i {
+    color: #d42660; /* Instagram pembe rengi */
+    font-size: 24px; /* İkon boyutunu ayarlayabilirsin */
+    transition: color 0.3s ease; /* Hover efektinde yumuşak geçiş için */
+}
+
+.social-icon.whatsapp i {
+    color: #25D366; /* WhatsApp yeşil rengi */
+    font-size: 24px; /* İkon boyutunu ayarlayabilirsin */
+    transition: color 0.3s ease; /* Hover efektinde yumuşak geçiş için */
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Hover efektleri */
+.social-icon.instagram:hover i {
+    color: #C13584; /* Daha koyu pembe ton */
+}
+
+.social-icon.whatsapp:hover i {
+    color: #128C7E; /* Daha koyu yeşil ton */
+}
+/* Genel Metin Stili */
+.center-text {
+    text-align: center;
+    font-weight: 500; /* Yazıları biraz kalınlaştır */
+    font-size: 1.2rem;
+    line-height: 1.8; /* Satır arası boşluğu artır */
+    margin: 0 auto;
+    max-width: 800px; /* Yazı genişliğini sınırlı tut */
+}
+
+/* Liste Stili */
+.center-text ul {
+    list-style-type: none; /* Nokta ya da sayı görünmesin */
+    padding: 0;
+}
+
+.center-text li {
+    margin: 0.5rem 0;
+}
+
+/* Başlık Stili */
+.gallery h1,
+.gallery h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.gallery h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.gallery h2 {
+    font-size: 1.8rem;
+    color: #444;
+}
+
+/* Paragraf Alanı */
+.gallery p {
+    margin-bottom: 1.5rem;
+}
+.spacer{
+    height: 100px;
+}
